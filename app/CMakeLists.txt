@@ -6,14 +6,14 @@ cmake_minimum_required(VERSION 3.4.1)
 #message("当前cmake的路径, ${CMAKE_SOURCE_DIR}")
 
 #批量导入源文件
-file(GLOB allCpp *.cpp)
+file(GLOB native_srcs "src/main/cpp/*.cpp")
 
 #TODO 2 导入库源文件 (库名 库类型（静态/动态） 源文件)
 add_library(
         native-lib
         SHARED
-        src/main/cpp/native-lib.cpp
-        #        ${allCpp}
+#        src/main/cpp/native-lib.cpp
+                ${native_srcs}
 )
 
 #TODO  导入自己打包的库或者 第三方库
